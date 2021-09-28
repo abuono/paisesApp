@@ -6,23 +6,24 @@ export interface Country {
     callingCodes:   string[];
     capital:        string;
     altSpellings:   string[];
+    subregion:      string;
     region:         string;
-    continent:      string;
     population:     number;
     latlng:         number[];
     demonym:        string;
     area:           number;
-    gini:           number;
+    gini?:          number;
     timezones:      string[];
-    borders:        string[];
+    borders?:       string[];
     nativeName:     string;
     numericCode:    string;
+    flags:          Flags;
     currencies:     Currency[];
     languages:      Language[];
     translations:   Translations;
-    flags:          string[];
-    regionalBlocs:  RegionalBloc[];
-    cioc:           string;
+    flag:           string;
+    regionalBlocs?: RegionalBloc[];
+    cioc?:          string;
     independent:    boolean;
 }
 
@@ -30,6 +31,11 @@ export interface Currency {
     code:   string;
     name:   string;
     symbol: string;
+}
+
+export interface Flags {
+    svg: string;
+    png: string;
 }
 
 export interface Language {
